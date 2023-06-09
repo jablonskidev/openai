@@ -29,3 +29,20 @@
 
 ## Prompt Engineering
 
+Here are components of an effective prompt:
+
+| Component           | Example                                                                         |
+|---------------------|---------------------------------------------------------------------------------|
+| Task                | List the place names in the following text.                                     |
+| Input data          | Text: "British Columbia borders Alberta, Yukon, and the Northwest Territories." |
+| Output requirements | Desired format: <comma_separated_list>                                          |
+
+You can use the completion model to:
+- Summarize text
+- Extract data
+- Analyse sentiment
+- Transform text (example: translating)
+
+If you're not getting useful results, you can:
+- Give examples of what you want (zero-shot vs one-shot vs few-shot prompting)
+- Add "Let's think step by step" (chain of thought)
