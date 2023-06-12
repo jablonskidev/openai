@@ -16,12 +16,6 @@
 - Cost = input tokens + output tokens
 - `max_tokens` to limit the number of tokens in output (default = 16)
 
-## Parameters
-
-- **`stop`:** https://platform.openai.com/docs/api-reference/completions/create#completions/create-stop
-- **`n`:** https://platform.openai.com/docs/api-reference/completions/create#completions/create-n
-- **`echo`:** https://platform.openai.com/docs/api-reference/completions/create#completions/create-echo
-
 ## Models
 
 - Check out existing models: https://platform.openai.com/docs/models
@@ -29,7 +23,13 @@
 
 ## Prompt Engineering
 
-Here are components of an effective prompt:
+You can use the completion model to:
+- Summarize text
+- Extract data
+- Analyse sentiment
+- Transform text (example: translating)
+
+Here are components of an **effective prompt**:
 
 | Component           | Example                                                                         |
 |---------------------|---------------------------------------------------------------------------------|
@@ -37,12 +37,20 @@ Here are components of an effective prompt:
 | Input data          | Text: "British Columbia borders Alberta, Yukon, and the Northwest Territories." |
 | Output requirements | Desired format: <comma_separated_list>                                          |
 
-You can use the completion model to:
-- Summarize text
-- Extract data
-- Analyse sentiment
-- Transform text (example: translating)
-
 If you're not getting useful results, you can:
 - Give examples of what you want (zero-shot vs one-shot vs few-shot prompting)
 - Add "Let's think step by step" (chain of thought)
+
+To control the **randonmness** of your output with the [completions API](https://platform.openai.com/docs/api-reference/completions), use the following parameters:
+
+| Parameter   | Value  | Default | Under the Hood   |
+|-------------|--------|---------|------------------|
+| Temperature | 0 to 2 | 1       | Logits           |
+| Top P       | 0 to 1 | 1       | Nucleus sampling |
+
+To control the **repetitiveness** of your output with the [completions API](https://platform.openai.com/docs/api-reference/completions), use the following parameters:
+
+| Parameter         | Value   | Default | Repetition        | Under the Hood                |
+|-------------------|---------|---------|-------------------|-------------------------------|
+| Frequency penalty | -2 to 2 | 0       | Individual tokens | Proportional contribution     |
+| Presence penalty  | -2 to 2 | 0       | Topic             | one-off additive contribution | 
