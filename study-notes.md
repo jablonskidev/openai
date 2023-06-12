@@ -52,4 +52,4 @@ To control the **repetitiveness** of your output with the [completions API](http
 | Parameter         | Value   | Default | Repetition        | Under the Hood                |
 |-------------------|---------|---------|-------------------|-------------------------------|
 | Frequency penalty | -2 to 2 | 0       | Individual tokens | Proportional contribution     |
-| Presence penalty  | -2 to 2 | 0       | Topic             | one-off additive contribution | 
+| Presence penalty  | -2 to 2 | 0       | Topic             | One-off additive contribution | 
