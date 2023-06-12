@@ -4,7 +4,6 @@
 
 **Table of contents:**
 - [Tokens](#Tokens)
-- [Parameters](#Parameters)
 - [Models](#Models)
 - [Prompt Engineering](#Prompt-Engineering)
 
