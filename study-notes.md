@@ -5,7 +5,8 @@
 **Table of contents:**
 - [Tokens](#Tokens)
 - [Models](#Models)
-- [Prompt Engineering](#Prompt-Engineering)
+- [Using the Completions API](#Using-the-Completions-API)
+- [Using the Chat API](#Using-the-Chat-API)
 
 ---
 
@@ -20,9 +21,9 @@
 - Check out existing models: https://platform.openai.com/docs/models
 - Use playground to compare results: https://platform.openai.com/playground
 
-## Prompt Engineering
+## Using the Completions API
 
-You can use the completion model to:
+Here are some examples of what you can do with completions:
 - Summarize text
 - Extract data
 - Analyse sentiment
@@ -53,3 +54,29 @@ To control the **repetitiveness** of your output with the [completions API](http
 |-------------------|---------|---------|-------------------|-------------------------------|
 | Frequency penalty | -2 to 2 | 0       | Individual tokens | Proportional contribution     |
 | Presence penalty  | -2 to 2 | 0       | Topic             | One-off additive contribution | 
+
+## Using the Chat API
+
+You can use the chat API for:
+- Back-and-forth conversation
+- Single question and response
+
+With the chat API, you can use:
+- **`gpt-4`:** the most capable model
+- **`gpt-3.5-turbo`:** the most cost-effective model
+
+Here's an example of a request:
+```
+openai.ChatCompletion.create(
+  model="gpt-3.5-turbo",
+  messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": 'Translate the following English text to French: "I like trees."'},
+        {"role": "assistant", "content": "J'aime les arbres."},
+        {"role": "user", "content": 'Translate the following English text to French: "I collect moss."'},
+        
+    ]
+)
+```
+You can use `role`, `user`, `assistant`, `system`, and `content` to give context and structure your request.
+
