@@ -2,12 +2,13 @@
 
 ---
 
-**Table of contents:**
+**Topics:**
 - [Tokens](#Tokens)
 - [Models](#Models)
 - [Using the Completions API](#Using-the-Completions-API)
 - [Using the Chat API](#Using-the-Chat-API)
-
+- [Embeddings](#Embeddings)
+- [Using the DALL-E API](#Using-the-DALL-E-API)
 ---
 
 ## Tokens
@@ -80,3 +81,6 @@ openai.ChatCompletion.create(
 ```
 You can use `role`, `user`, `assistant`, `system`, and `content` to give context and structure your request.
 
+## Embeddings
+
+## Using the DALL-E API
